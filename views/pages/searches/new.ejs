@@ -2,12 +2,22 @@
 <html>
 
 <head>
-    <title>Search Book</title>
+    <title>Book Search</title>
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
 </head>
 
 
 <body>
+    <header>
+        <h1>Best Books!</h1>
+        <section id='headerImg'>
+            <img src="img/hamburger.jpg">
+        </section>
+        <section id="pageTitle">Search by Title or Author</section>
+    </header>
     <main>
         <section>
             <form id="addForm" action="/searches" method="POST">

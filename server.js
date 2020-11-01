@@ -18,20 +18,20 @@ app.use(express.urlencoded({ extended: true }));
 app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
 
 app.get('/', homePage);
-app.get('/searches/new', getBook);
-app.post('/searches', searchForBooks);
+app.get('/searches/new', getBooks);
+app.post('/searches', findBooks);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 function homePage(request, response) {
   response.render('pages/index');
 }
 
-function getBook(request, response) {
+function getBooks(request, response) {
   response.render('pages/searches/new');
 
 }
 
-function searchForBooks(request, response) {
+function findBooks(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
   if (request.body.search[1] === 'title') { url += `+intitle:${request.body.search[0]}&max-results=10`; }
   if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}&max-results=10`; }
