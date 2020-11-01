@@ -8,10 +8,10 @@
 <body>
     we will show results here
           <main>
-              <% searchResults.forEach(book => { %>
+              <% booksResults.forEach(book => { %>
                 <section id="book-template">
                   <p>Title: <%= book.title %></p>
-                  <img src="<%= book.image_url %>" alt="Image">
+                  <img src="<%= book.image_url %>">
                   <p>Author: <%= book.author %></p>
                   <p>Description: <%= book.description.substring(0, 150) %></p>                  
                 </section>
