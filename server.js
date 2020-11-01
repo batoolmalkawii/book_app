@@ -17,8 +17,15 @@ app.set('view engine', 'ejs');
 app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
 
 app.get('/', homePage);
+app.get('/searches/new', getBook);
+
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 function homePage(request, response) {
   response.render('pages/index', {title :"page index"});
+}
+
+function getBook(request, response){
+  response.render('pages/searches/new', {title :"search"});
+
 }
