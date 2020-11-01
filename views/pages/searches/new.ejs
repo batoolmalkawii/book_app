@@ -10,24 +10,25 @@
 <body>
     <main>
         <section>
-            <form id="addForm">
+            <form id="addForm" action="/searches" method="POST">
                 <fieldset>
                     <legend>
                         <h2>Search by title or author</h2>
                     </legend>
                     <p>
-                        <input type="text" id="book" placeholder="Enter a title or author" required>
+                        <input type="text" name="search" id="book" placeholder="Enter a title or author" required>
                     </p>
-                    <p>
-                        <input type="radio" id="title" name="title" value="title">
-                        <label for="title">Title</label><br>
-                    </p>
-                    <p>
-                        <input type="radio" id="author" name="author" value="author">
-                        <label for="author">Author</label><br>
-                    </p>
+                    <fieldset>
+                        <p>
+                            <input type="radio" id="title" name="search" value="title">
+                            <label for="title">Title</label><br>
+                        </p>
+                        <p>
+                            <input type="radio" id="author" name="search" value="author">
+                            <label for="author">Author</label><br>
+                        </p>
+                    </fieldset>
                     <button type="submit" id="submit">Search the Google Books API</button>
-                </fieldset>
             </form>
         </section>
     </main>

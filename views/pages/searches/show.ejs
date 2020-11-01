@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="styles/base.css">
+    </head>
+
+<body>
+    we will show results here
+          <main>
+              <% searchResults.forEach(book => { %>
+                <section id="book-template">
+                  <p>Title: <%= book.title %></p>
+                  <img src="<%= book.image_url %>" alt="Image">
+                  <p>Author: <%= book.author %></p>
+                  <p>Description: <%= book.description.substring(0, 150) %></p>                  
+                </section>
+              <% }); %>
+          </main>
+      </body>
+</body>
+
+</html>
+
+
+
