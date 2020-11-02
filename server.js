@@ -26,6 +26,8 @@ client.connect().then(() => {
 app.get('/', homePage);
 app.get('/searches/new', getBooks);
 app.post('/searches', findBooks);
+app.get('/books/add', getAddForm);
+app.post('/books', addBook);
 app.get('/books/:book_id', showOneBook);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
@@ -67,7 +69,21 @@ function showOneBook(request, response) {
   }).catch(() => {
     response.status(500).send('Something Went Wrong');
   });
+}
 
+
+function getAddForm(request, response){
+  response.render('pages/books/add');
+
+}
+function addBook (request, response){
+  const [author, title, isbn, image_url, description] = request.body.add;
+  console.log(request.body);
+  const insertedBook = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES($1,$2,$3,$4,$5);';
+  const safeValues = [author, title, isbn, image_url, description];
+  client.query(insertedBook,safeValues).then(() => {
+    response.status(200).redirect('/');
+  });
 }
 
 let booksArray = [];

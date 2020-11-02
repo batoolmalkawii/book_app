@@ -53,6 +53,11 @@ header h1{
         line-height: 1.5em;
     }
 
+    #book-template img{
+        width: 250px;
+        height: 300px;
+    }
+
     #book-template:nth-child(odd){
         clear: both;
         float: left;
