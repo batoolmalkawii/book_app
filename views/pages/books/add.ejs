@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Book Search</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/modules.css">
-</head>
-
+<%- include ('../layouts/head') %>
 
 <body>
     <header>
@@ -26,21 +18,21 @@
                         <h2>Add a new book to your bookshelf</h2>
                     </legend>
                     <fieldset>
-                    <p>
-                        <input type="text" name="add" id="author" placeholder="Enter an author" required>
-                    </p>
-                    <p>
-                        <input type="text" name="add" id="title" placeholder="Enter a title" required>
-                    </p>
-                    <p>
-                        <input type="text" name="add" id="isbn" placeholder="Enter an ISBN" required>
-                    </p>
-                    <p>
-                        <input type="text" name="add" id="image_url" placeholder="Enter image URL" required>
-                    </p>
-                    <p>
-                        <input type="text" name="add" id="description" placeholder="Enter a description" required>
-                    </p>
+                        <p>
+                            <input type="text" name="add" id="author" placeholder="Enter an author" required>
+                        </p>
+                        <p>
+                            <input type="text" name="add" id="title" placeholder="Enter a title" required>
+                        </p>
+                        <p>
+                            <input type="text" name="add" id="isbn" placeholder="Enter an ISBN" required>
+                        </p>
+                        <p>
+                            <input type="text" name="add" id="image_url" placeholder="Enter image URL" required>
+                        </p>
+                        <p>
+                            <input type="text" name="add" id="description" placeholder="Enter a description" required>
+                        </p>
                     </fieldset>
                     <button type="submit" id="submit">Add Book</button>
             </form>

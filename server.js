@@ -19,9 +19,7 @@ const client = new pg.Client(DATABASE_URL);
 
 client.connect().then(() => {
   app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
-}).catch(error => {
-  console.log('error', error);
-});
+}).catch(handleError);
 
 app.get('/', homePage);
 app.get('/searches/new', getBooks);
@@ -54,9 +52,7 @@ function findBooks(request, response) {
   ).then(results => {
     response.render('pages/searches/show', { booksResults: booksArray });
 
-  }).catch(() => {
-    response.status(500).send('Something Went Wrong');
-  });
+  }).catch(handleError);
 }
 
 function showOneBook(request, response) {
@@ -66,19 +62,15 @@ function showOneBook(request, response) {
     response.render('pages/books/show', {
       book: data.rows[0]
     });
-  }).catch(() => {
-    response.status(500).send('Something Went Wrong');
-  });
+  }).catch(handleError);
 }
 
 
 function getAddForm(request, response){
   response.render('pages/books/add');
-
 }
 function addBook (request, response){
   const [author, title, isbn, image_url, description] = request.body.add;
-  console.log(request.body);
   const insertedBook = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES($1,$2,$3,$4,$5);';
   const safeValues = [author, title, isbn, image_url, description];
   client.query(insertedBook,safeValues).then(() => {
@@ -86,6 +78,9 @@ function addBook (request, response){
   });
 }
 
+function handleError(){
+  response.status(500).send('Something Went Wrong');
+}
 let booksArray = [];
 function Book(info) {
   this.title = info.volumeInfo.title || 'No title available.';

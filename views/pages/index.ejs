@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-        <link rel="stylesheet" href="/styles/reset.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/layout.css">
-        <link rel="stylesheet" href="/styles/modules.css">
-    </head>
+<%- include ('layouts/head') %>
 
 <body>
     <header>
@@ -20,18 +14,18 @@
         <p id="welcome">Welcome to the Best Books App!</p>
         <section>
             <% booksList.forEach(book => { %>
-                <section id="book-template">
-                    <p><br>Title: <%= book.title %></p><br><br>
-                    <img src="<%= book.image_url %>"><br><br>
-                    <p>Author: <%= book.author %></p><br><br>
-                    <p>ISBN: <%= book.isbn %></p><br><br>
-                    <p id="description">Description: <br><br><%= book.description.substring(0,300) %></p><br>
-                    <a href="/books/<%= book.id %>"> View Details</a>
-                </section>
-                <% }); %>
+            <section id="book-template">
+                <p><br>Title: <%= book.title %></p><br><br>
+                <img src="<%= book.image_url %>"><br><br>
+                <p>Author: <%= book.author %></p><br><br>
+                <p>ISBN: <%= book.isbn %></p><br><br>
+                <p id="description">Description: <br><br><%= book.description.substring(0,300) %></p><br>
+                <a href="/books/<%= book.id %>"> View Details</a>
+            </section>
+            <% }); %>
         </section>
         <section>
-        <p id="booksCount">Number of books in your bookshelf: <%= booksCount %></p>
+            <p id="booksCount">Number of books in your bookshelf: <%= booksCount %></p>
         </section>
     </main>
 </body>
