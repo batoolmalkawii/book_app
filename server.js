@@ -11,11 +11,17 @@ app.use(cors());
 app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY;
+const DATABASE_URL = process.env.DATABASE_URL;
 app.set('views', 'views/');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
+const client = new pg.Client(DATABASE_URL);
 
-app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
+client.connect().then(() => {
+  app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
+}).catch(error => {
+  console.log('error', error);
+});
 
 app.get('/', homePage);
 app.get('/searches/new', getBooks);
@@ -23,7 +29,10 @@ app.post('/searches', findBooks);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 function homePage(request, response) {
-  response.render('pages/index');
+  let selectBooks = 'SELECT author, title, isbn, image_url, description FROM books;';
+  client.query(selectBooks).then(result => {
+    response.render('pages/index', { booksList: result.rows, booksCount: result.rows.length});
+  });
 }
 
 function getBooks(request, response) {
@@ -41,6 +50,7 @@ function findBooks(request, response) {
     })
   ).then(results => {
     response.render('pages/searches/show', { booksResults: booksArray });
+
   }).catch(() => {
     response.status(500).send('Something Went Wrong');
   });
