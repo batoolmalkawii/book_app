@@ -26,12 +26,13 @@ client.connect().then(() => {
 app.get('/', homePage);
 app.get('/searches/new', getBooks);
 app.post('/searches', findBooks);
+app.get('/books/:book_id', showOneBook);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 function homePage(request, response) {
-  let selectBooks = 'SELECT author, title, isbn, image_url, description FROM books;';
+  let selectBooks = 'SELECT id, author, title, isbn, image_url, description FROM books;';
   client.query(selectBooks).then(result => {
-    response.render('pages/index', { booksList: result.rows, booksCount: result.rows.length});
+    response.render('pages/index', { booksList: result.rows, booksCount: result.rows.length });
   });
 }
 
@@ -54,6 +55,19 @@ function findBooks(request, response) {
   }).catch(() => {
     response.status(500).send('Something Went Wrong');
   });
+}
+
+function showOneBook(request, response) {
+  const selectedBook = 'SELECT * FROM books WHERE id=$1';
+  const safeValues = [request.params.book_id];
+  client.query(selectedBook, safeValues).then(data => {
+    response.render('pages/books/show', {
+      book: data.rows[0]
+    });
+  }).catch(() => {
+    response.status(500).send('Something Went Wrong');
+  });
+
 }
 
 let booksArray = [];

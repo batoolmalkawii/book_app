@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>Home</title>
-        <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/base.css">
-        <link rel="stylesheet" href="styles/layout.css">
-        <link rel="stylesheet" href="styles/modules.css">
+        <link rel="stylesheet" href="/styles/reset.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/layout.css">
+        <link rel="stylesheet" href="/styles/modules.css">
     </head>
 
 <body>
@@ -26,6 +26,7 @@
                     <p>Author: <%= book.author %></p><br><br>
                     <p>ISBN: <%= book.isbn %></p><br><br>
                     <p id="description">Description: <br><br><%= book.description.substring(0,300) %></p><br>
+                    <a href="/books/<%= book.id %>"> View Details</a>
                 </section>
                 <% }); %>
         </section>
