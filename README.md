@@ -47,3 +47,34 @@ Start time: 2:35pm
 Finish time: 2:40pm
 Actual time needed to complete: 5min
 <!-- -->
+
+
+<!-- Lab 12-->
+<!-- -->
+Number and name of feature: 1
+Estimate of time needed to complete: 45min
+Start time: 2:00pm
+Finish time: 2:45pm
+Actual time needed to complete: 45min
+<!-- -->
+<!-- -->
+Number and name of feature: 2
+Estimate of time needed to complete: 30min
+Start time: 2:45pm
+Finish time: 3:15pm
+Actual time needed to complete: 30min
+<!-- -->
+<!-- -->
+Number and name of feature: 3
+Estimate of time needed to complete: 30min
+Start time: 3:15pm
+Finish time: 3:45pm
+Actual time needed to complete: 30min
+<!-- -->
+<!-- -->
+Number and name of feature: 4
+Estimate of time needed to complete: 15min
+Start time: 3:45pm
+Finish time: 4:00pm
+Actual time needed to complete: 5min
+<!-- -->
