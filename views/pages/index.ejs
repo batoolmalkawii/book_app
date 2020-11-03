@@ -20,7 +20,7 @@
                 <p>Author: <%= book.author %></p><br><br>
                 <p>ISBN: <%= book.isbn %></p><br><br>
                 <p id="description">Description: <br><br><%= book.description.substring(0,300) %></p><br>
-                <a href="/books/<%= book.id %>"> View Details</a>
+                <button id="viewDetailsButton"><a href="/books/<%= book.id %>"> View Details</a></button>
             </section>
             <% }); %>
         </section>

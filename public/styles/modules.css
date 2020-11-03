@@ -12,4 +12,9 @@
 
 #updateForm{
     display: none;
+    clear: both;
+}
+
+button{
+    clear: both;
 }
