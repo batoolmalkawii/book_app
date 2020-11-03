@@ -78,3 +78,20 @@ Start time: 3:45pm
 Finish time: 4:00pm
 Actual time needed to complete: 5min
 <!-- -->
+
+<!-- Lab 13-->
+<!-- -->
+Number and name of feature: 1
+Estimate of time needed to complete: 45min
+Start time: 2:00pm
+Finish time: 2:45pm
+Actual time needed to complete: 45min
+<!-- -->
+<!-- -->
+Number and name of feature: 2
+Estimate of time needed to complete: 30min
+Start time: 2:45pm
+Finish time: 3:15pm
+Actual time needed to complete: 30min
+<!-- -->
+
