@@ -11,7 +11,7 @@
         <section id="pageTitle">Home Page</section>
     </header>
     <main>
-        <p id="welcome">Welcome to the Best Books App!</p>
+        <p id="booksCount">Number of books in your bookshelf: <%= booksCount %></p>
         <section>
             <% booksList.forEach(book => { %>
             <section id="book-template">
@@ -24,9 +24,7 @@
             </section>
             <% }); %>
         </section>
-        <section>
-            <p id="booksCount">Number of books in your bookshelf: <%= booksCount %></p>
-        </section>
+       
     </main>
 </body>
 
