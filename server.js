@@ -6,11 +6,13 @@ const cors = require('cors');
 const pg = require('pg');
 const { request, response } = require('express');
 require('dotenv').config();
+const methodOverride = require('method-override');
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 const PORT = process.env.PORT || 3000;
-const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY;
+//const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY;
 const DATABASE_URL = process.env.DATABASE_URL;
 app.set('views', 'views/');
 app.set('view engine', 'ejs');
@@ -27,18 +29,18 @@ app.post('/searches', findBooks);
 app.get('/books/add', getAddForm);
 app.post('/books', addBook);
 app.get('/books/:book_id', showOneBook);
+app.put('/books/:book_id', updateBook);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 function homePage(request, response) {
   let selectBooks = 'SELECT id, author, title, isbn, image_url, description FROM books;';
   client.query(selectBooks).then(result => {
     response.render('pages/index', { booksList: result.rows, booksCount: result.rows.length });
-  });
+  }).catch(handleError);
 }
 
 function getBooks(request, response) {
   response.render('pages/searches/new');
-
 }
 
 function findBooks(request, response) {
@@ -75,7 +77,17 @@ function addBook (request, response){
   const safeValues = [author, title, isbn, image_url, description];
   client.query(insertedBook,safeValues).then(() => {
     response.status(200).redirect('/');
-  });
+  }).catch(handleError);
+}
+
+function updateBook(request, response){
+  const bookId = request.params.book_id;
+  const {title, author, isbn, image_url, description} = request.body;
+  const updatedBook = 'UPDATE books SET title=$1,author=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6;';
+  const safeValues = [title, author, isbn, image_url, description, bookId];
+  client.query(updatedBook, safeValues).then(()=>{
+    response.redirect(`/books/${bookId}`);
+  }).catch(handleError);
 }
 
 function handleError(){
