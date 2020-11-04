@@ -4,39 +4,38 @@
 
 <body>
     <header>
-        <h1>Best Books!</h1>
-        <section id='headerImg'>
-            <img src="img/hamburger.jpg">
-        </section>
-        <section id="pageTitle">Add Book</section>
+    <%- include ('../layouts/header') %>
+    <section id="pageTitle">Add Book</section>
     </header>
     <main>
         <section>
             <form id="addForm" action="/books" method="POST">
-                    <legend>
-                        <h2>Add a new book to your bookshelf</h2>
-                    </legend>
-                    <fieldset>
-                        <p>
-                            <input type="text" name="add" id="author" placeholder="Enter an author" required>
-                        </p>
-                        <p>
-                            <input type="text" name="add" id="title" placeholder="Enter a title" required>
-                        </p>
-                        <p>
-                            <input type="text" name="add" id="isbn" placeholder="Enter an ISBN" required>
-                        </p>
-                        <p>
-                            <input type="text" name="add" id="image_url" placeholder="Enter image URL" required>
-                        </p>
-                        <p>
-                            <input type="text" name="add" id="description" placeholder="Enter a description" required>
-                        </p>
-                    </fieldset>
-                    <button type="submit" id="submit">Add Book</button>
+                <legend class="formH2">
+                    <h2>Add a new book to your bookshelf</h2>
+                </legend>
+                <fieldset>
+                    <p>
+                        <input class="addInput" type="text" name="add" id="author" placeholder="Enter an author" required>
+                    </p>
+                    <p>
+                        <input class="addInput" type="text" name="add" id="title" placeholder="Enter a title" required>
+                    </p>
+                    <p>
+                        <input class="addInput" type="text" name="add" id="isbn" placeholder="Enter an ISBN" required>
+                    </p>
+                    <p>
+                        <input class="addInput" type="text" name="add" id="image_url" placeholder="Enter image URL" required>
+                    </p>
+                    <p>
+                        <input class="addInput" type="text" name="add" id="description" placeholder="Enter a description" required>
+                    </p>
+                </fieldset>
+                <button type="submit" id="addBookButton">Add Book</button>
             </form>
         </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/app.js"></script>
 </body>
 
 </html>

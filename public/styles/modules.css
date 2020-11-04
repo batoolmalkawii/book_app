@@ -18,3 +18,217 @@
 button{
     clear: both;
 }
+
+.ham{
+    width: 50px;
+    height: 50px;
+}
+
+#viewDetailsButton{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#viewDetailsButton a{
+   color: white;
+    text-decoration: none;
+}
+
+
+#detailBox{
+    clear: both;
+    margin-left: 280px;
+}
+
+#returnToHome{
+    clear: both;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+#returnToHome a{
+    text-decoration: none;
+    color: white;
+}
+
+
+#showUpdateForm{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#showUpdateForm a{
+   color: white;
+    text-decoration: none;
+}
+
+#deleteBook{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#deleteBook a{
+   color: white;
+    text-decoration: none;
+}
+
+form { 
+    margin: auto; 
+    width:250px;
+    
+    }
+
+fieldset {
+    width: 100%;
+    border: 1 solid black;
+}
+
+
+fieldset p input [type=text] {
+    width: 250px;
+    height: 30px;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+}
+
+fieldset p textarea {
+    width: 250px;
+    height: 200px;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#update{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    width: 250px;
+}
+
+#update:hover{
+    background-color: #000000;
+    transition-delay: 350ms;
+      }
+
+#update a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#firstInputUpdate{
+    margin-top: 10px;
+}
+
+#submitSearch{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.formH2{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 100px;
+    padding-bottom: 5px;
+}
+
+label{
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#book{
+    width: 235px;
+    height: 50px;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+}
+
+.addInput{
+    width: 250px;
+    height: 50px;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3px;  
+}
+
+#addBookButton{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    color:  #ffffff;
+    font-family: 'Raleway', sans-serif; 
+    border: none;
+    padding: 8px 9px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 250px;
+}
+
+.updateInput{
+    width: 250px;
+    height: 50px;
+    margin: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3px;  
+}

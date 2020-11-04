@@ -4,15 +4,13 @@
 
 <body>
     <header>
-        <h1>Best Books!</h1>
-        <section id='headerImg'>
-            <img src="img/hamburger.jpg">
-        </section>
-        <section id="pageTitle">Search Results</section>
+    <%- include ('../layouts/header') %>
+    <section id="pageTitle">Books List</section>
     </header>
+
     <main>
         <% booksResults.forEach(book => { %>
-        <section id="book-template">
+        <section class="book-template">
             <p><br>Title: <%= book.title %></p><br><br>
             <img src="<%= book.image_url %>"><br><br>
             <p>Author: <%= book.author %></p><br><br>
@@ -20,7 +18,7 @@
         </section>
         <% }); %>
     </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/app.js"></script>
 </body>
-</body>
-
 </html>

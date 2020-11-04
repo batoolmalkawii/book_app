@@ -4,17 +4,14 @@
 
 <body>
     <header>
-        <h1>Best Books!</h1>
-        <section id='headerImg'>
-            <img src="img/hamburger.jpg">
-        </section>
-        <section id="pageTitle">Search by Title or Author</section>
-    </header>
+    <%- include ('../layouts/header') %>
+    <section id="pageTitle">Search for a Book</section>
+</header>
     <main>
         <section>
             <form id="searchForm" action="/searches" method="POST">
                 <fieldset>
-                    <legend>
+                    <legend class="formH2">
                         <h2>Search by title or author</h2>
                     </legend>
                     <p>
@@ -30,10 +27,12 @@
                             <label for="author">Author</label><br>
                         </p>
                     </fieldset>
-                    <button type="submit" id="submit">Search the Google Books API</button>
+                    <button type="submit" id="submitSearch">Search the Google Books API</button>
             </form>
         </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/app.js"></script>
 </body>
 
 </html>

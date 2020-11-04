@@ -4,16 +4,13 @@
 
 <body>
     <header>
-        <h1>Best Books!</h1>
-        <section id='headerImg'>
-            <img src="img/hamburger.jpg">
-        </section>
-        <section id="pageTitle">Search Results</section>
+    <%- include ('../layouts/header') %>
+    <section id="pageTitle">Book Info</section>
     </header>
     <main>
         <%- include ('detail.ejs') %>
         <%- include ('edit.ejs') %>
-        <section><a href="../">Return to Home Page</a></section>
+        <section id="returnToHome"><a href="../">Return to Home Page</a></section>
     </main>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="/app.js"></script>
