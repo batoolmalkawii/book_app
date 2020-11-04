@@ -14,7 +14,7 @@ app.use(methodOverride('_method'));
 const PORT = process.env.PORT || 3000;
 //const GOOGLE_BOOKS_API_KEY = process.env.GOOGLE_BOOKS_API_KEY;
 const DATABASE_URL = process.env.DATABASE_URL;
-app.set('views', 'views/');
+//app.set('views', 'views/');
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 const client = new pg.Client(DATABASE_URL);
